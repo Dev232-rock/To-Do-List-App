@@ -1,0 +1,29 @@
+/* The alert message box */
+
+.alert {
+    padding: 20px;
+    background-color: rgb(201, 47, 47);
+    color: white;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .closebtn {
+    margin-left: 25px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .closebtn:hover {
+    color: black;
+    font-size: 26px ;
+  }
+ 
+
+

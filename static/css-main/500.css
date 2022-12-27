@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Roboto:ital,wght@1,900&family=Ubuntu:wght@700&display=swap');
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    color: #1b2e35;
+    font-weight: bold;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 600px;
+    border-radius: 5px;
+}
+
+
+.img{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.back-home{
+    padding: 10px 20px;
+    background-color:#ffc801 ;
+    text-decoration: none;
+    border-radius: 20px;
+    margin-top: 5%;
+    color:#1b2e35 ;
+    font-size: 1.4rem;
+}
+
+.found{
+    text-decoration: none;
+    color:#1b2e35 ;
+    text-decoration: line-through;
+    padding: 5px;
+}
+
+h1{
+    font-size: 3rem;
+}

@@ -1,0 +1,177 @@
+/* Edit Modal SEction start */
+.ModalEdit{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.ModalBack{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.ModalContent{
+    position: fixed;
+    background-color: white;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+    bottom: 20%;
+}
+
+.close{
+    font-size: xx-large;
+    cursor: pointer;
+}
+
+.content-inside{
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.header-edit{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.task-editor form{
+    display: flex;
+    flex-direction: column;
+}
+
+.task-editor input{
+    padding:10px ;
+    width: 100%;
+    height: 60px;
+    border: 1px solid var(--odd_child_color);
+    margin: 2rem 0;
+    border-radius: 10px;
+}
+
+.task-editor input[type="submit"]{
+    padding: 0 !important;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color:white;
+    background-color: var(--header-background);
+}
+
+.task-editor input[type="submit"]:hover{
+    background-color: var(--header-background-lighter);
+}
+#Modal-Edit{display: none;} 
+/* Edit Modal SEction ENd */
+
+
+
+/* Delete Modal Section Start */
+.ModalDelete{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+.ModalBack{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+}
+
+.option-delete{
+    padding: 10px;
+    border-style: none;
+    border: 1px solid var(--odd_child_color);
+    margin: 1rem;
+}
+
+.yes,.no{
+    background-color: var(--header-background);
+    color: white;
+    font-size: 2rem;
+}
+.delete-section{
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
+
+.delete-section input{
+    cursor: pointer;
+    
+}
+.delete-section input:hover{
+    background-color: var(--header-background-lighter);
+}
+
+#Modal-Delete{display: none;}
+/* Delete Modal Section ENd */
+
+
+
+/* add new task Modal start */
+#Modal_Add_Task{display:none;} 
+#Modal_Add_Task{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom:0 ;
+    right: 0;
+}
+
+.Modal_Content{
+    background-color: white;
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    right: 20%;
+    bottom: 20%;
+    padding: 10px;
+}
+
+#Close_Btn_Add {
+    cursor: pointer;
+}
+
+.content-Add form{
+    display: flex;
+    flex-direction: column;
+}
+
+#ADD_BTN:hover{
+    background-color: var(--header-background-lighter);
+}
+#ADD_BTN ,#Task_Name{
+    background-color: var(--header-background);
+    height: 40px;
+}
+
+#ADD_BTN {
+    font-size: 1.5rem;
+    color: white;
+}
+.content-Add input,textarea{
+    border: 1px solid var(--odd_child_color);
+}
+/* add new task Modal ENd */
+
+
+
+
+
+/* Modal alert */
+.Modal_alert{
+    display: none; 
+    position: fixed;
+    top: 10%;
+    left: 0;
+    right: 0;
+}
+/* Modal alert */

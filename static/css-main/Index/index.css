@@ -1,0 +1,81 @@
+.container{
+    width: 98vw;
+    margin: 10px auto;
+}
+
+.table-content{
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 10px;
+}
+
+td,th{
+    padding: 10px;
+    text-align: start;
+}
+
+.header-cell{
+    background-color: var(--header-background);
+    color: white;    
+    text-align: center;
+    text-align: start;
+}
+
+.left-top{
+    border-radius: 10px 0 0 0;
+}
+
+.right-top{
+    border-radius:0 10px 0 0;
+    
+}
+
+.even{
+    background-color: var(--odd_child_color); 
+}
+.odd{
+    background-color: rgb(252, 246, 246);
+}
+
+.last{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.last-header{
+    text-align: center;
+}
+
+.btn-opr{
+    margin-left: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 8px;
+    background-color: var(--header-background);
+    border: 1px solid var(--odd_child_color);
+}
+
+.btn-opr:hover{
+    background-color: var(--header-background-lighter);
+}
+
+.edit,.delete,.done{
+    background-color: var(--color);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.title{
+    font-weight: 500;
+}
+
+#Btn_Add-New-Task{
+    background-color: var(--color) !important;
+    text-decoration: None;
+    cursor: pointer;
+}
+
+#Btn_Add-New-Task:hover{
+background-color: var(--header-background-lighter) !important;
+}
