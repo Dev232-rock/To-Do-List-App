@@ -1,0 +1,214 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home
+{% endblock%} 
+
+{% block style%}
+<link
+rel="stylesheet"
+href=" {{ url_for('static', filename='css-main/index/index-helper.css') }} "
+/>
+<link
+rel="stylesheet"
+href=" {{ url_for('static', filename='css-main/index/index.css') }} "
+/>
+<link
+rel="stylesheet"
+href=" {{ url_for('static', filename='css-main/index/index-Modal.css') }} "
+/>
+
+{% endblock%}
+
+
+{% block main %}
+
+<div class="button-add-task position-fixed end-0 bottom-0 m-4">
+    <h4 class="fs-4 p-2 rounded rounded-2 text-white" id="Btn_Add-New-Task">
+        Add New Task
+    </h4>
+</div>
+
+
+<table class="table-content">
+    <thead>
+        <tr class="header-col">
+            <th class="header-cell left-top">#</th>
+            <th class="header-cell">Task Name</th>
+            <th class="header-cell">Info</th>
+            <th class="header-cell right-top text-center">Status</th>
+        </tr>
+    </thead>
+        <tbody>
+            <div class="body-table">
+                {% if user_db %} 
+                {% for each in user_db %}
+                {% set line_counter = loop.index %}
+                <tr class="odd">
+                    <td>
+                        <i class="fa-solid fa-circle-check"></i>
+                        {{line_counter}}
+                    </td>
+                    
+                    <td class="title">{{each.task_title}}</td>
+                    <td>{{each.task_info}}</td>
+                    <td class="last">
+                        <form action="/edit" method="get">
+                            <input type="hidden" name="post_id" value="{{each.id}}" />
+                            <button class="btn-opr" class="edit" type="submit">
+                                <i class="fa-solid fa-file-pen"></i>
+                                Edit
+                            </button>
+                        </form>
+                        
+                        <form action="/delete" method="get">
+                            <input type="hidden" name="post_id" value="{{each.id}}" />
+                            <button class="btn-opr" class="delete" type="submit">
+                                <i class="fa-solid fa-trash"></i>
+                                Delete
+                            </button>
+                        </form>
+                        
+                        <form action="/done" method="post">
+                            <input type="hidden" name="post_id" value="{{each.id}}" />
+                  <button class="btn-opr" class="done" type="submit">
+                      <i class="fa-solid fa-circle-check"></i>
+                      Done
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        {% endif %}
+    </div>
+</tbody>
+</table>
+
+{% endblock %}
+
+
+
+{% block add_task %}
+<!-- Edit -->
+<div class="ModalEdit" id="Modal-Edit">
+    <div class="ModalBack"></div>
+    <div class="ModalContent">
+        <div class="content-inside">
+            <div class="header-edit">
+                <h2>Edit Your Task</h2>
+                <span class="close" id="Close-Modal">&times;</span>
+            </div>
+            <div class="task-editor">
+                <form action="/action_target" method="post">
+                    <input
+                    required
+                    type="text"
+                    name="Edit_Task_Name"
+                    id="Edit_Task_Name"
+                    placeholder="Task Name"
+                    />
+                    <textarea
+                    required
+                    name="Edit_Task_Info"
+                    id="Edit_Task_Info"
+                    cols="30"
+                    rows="10"
+                    placeholder="Edit Your Info Task"
+                    >
+                </textarea>
+                <input type="submit" value="Edit" />
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Delete -->
+<div class="ModalDelete" id="Modal-Delete">
+    <div class="ModalBack"></div>
+    
+    <div class="ModalContent">
+        <div class="content-inside">
+            <div class="header-edit">
+                <h2>Delete Task</h2>
+                <span class="close" id="Close-Modal-edit">&times;</span>
+            </div>
+            
+            <div class="delete-section">
+                <div>
+                    <h2>Are sure wanna Delete This Task?</h2>
+                </div>
+                <div>
+                    <form action="">
+                        <input type="submit" class="option-delete yes" value="Yes" />
+                        <input type="submit" class="option-delete no" value="No" />
+                    </form>
+              </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- add new task -->
+<div id="Modal_Add_Task">
+    <div class="ModalBack"></div>
+    <div class="Modal_Content">
+        <div
+        class="Modal_Add_Header d-flex justify-content-between align-items-center"
+        >
+        <h3>Add New Task</h3>
+        <div>
+            <span id="Close_Btn_Add" class="fs-2">&times;</span>
+        </div>
+    </div>
+    <div class="content-Add">
+        <form id="Form_add_task" action="add_new_task" method="post">
+            <label class="mt-3" for="Task_Name"> TASK NAME </label>
+            <input
+            type="hidden"
+            name="user_adding_new_task"
+            id=""
+            value=" {{user_id}} "
+            />
+            <input
+            class="p-2"
+            type="text"
+            name="Task_Name"
+            id="Task_Name_Field"
+            required
+            placeholder="TASK NAME"
+            />
+            <label class="mt-3" for="Task_Info"> TASK INFO </label>
+            <textarea
+            class="p-2"
+            name="Task_Info"
+            placeholder="TASK Description"
+            required
+            id="Task_Info_Field"
+            cols="30"
+            rows="10"
+            ></textarea>
+            <input class="mt-3" type="submit" value="ADD" id="ADD_BTN" />
+        </form>
+    </div>
+</div>
+
+<div class="Modal_alert">
+    <div
+    class="w-50 mx-auto alert alert-danger alert-dismissible fade show"
+    role="alert"
+    >
+            <strong>Error</strong>
+            <span id="Add_alert_text"></span>
+            <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+            ></button>
+        </div>
+    </div>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="../static/img/logo.png" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/9acc533df2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='css-main/style.css')}}"
+    />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="main">
+        <div class="left">
+          {% with message = get_flashed_messages() %} {% if message %}
+          <div style="background-color: rgb(66, 198, 64)" class="alert">
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            {% for msg in message %} {{msg}} {% endfor %}
+          </div>
+          {% endif %} {% endwith %}
+
+          <!-- E -->
+          {% if error %}
+          <div class="alert">
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            {{error_message}}
+          </div>
+          {% endif %}
+          <!-- E -->
+
+          <!-- s -->
+          {% if get_flashed_messages() %}
+          <div style="background-color: rgb(66, 198, 64)" class="alert">
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+              >&times;</span
+            >
+            {{get_flashed_messages() | join("") }} a
+          </div>
+          {% endif %}
+          <!-- s -->
+
+          <div class="title title-login">
+            <h2>Login To your account</h2>
+            <h4>
+              Does'nt have account?
+              <span class="register"><a href="/register">Register</a></span>
+            </h4>
+          </div>
+
+          <form class="form" method="post" action="/login">
+            {{form.hidden_tag()}} {{form.username.label()}}
+            {{form.username(placeholder="Username Must be alphabetical and Numbers")}} {{form.password.label()}}
+            {{form.password(placeholder="Password Must between 6-64 character")}}
+            <div class="options">
+              <label for="checkbox">
+                <input type="checkbox" name="checkbox" id="checkbox" />
+                <span class="ME">Remember ME</span>
+              </label>
+              <h3 class="forgot">Forgot Password ? <a href="">Click</a></h3>
+            </div>
+            {{form.submit()}}
+          </form>
+
+          <div class="footer">
+            <div class="social">
+              <a class="social-btn" href="https://www.github.com/alishartifyy"
+                ><span class="icon-title">Github</span>
+                <i class="fa-brands fa-github"></i
+              ></a>
+              <a class="social-btn" href="https://www.twitter.com/alisharify7"
+                ><span class="icon-title">Twitter</span>
+                <i class="fa-brands fa-twitter-square"></i
+              ></a>
+              <a
+                class="social-btn"
+                href="https://www.instagran.com/ali._.sharify"
+                ><span class="icon-title">Instagram</span>
+                <i class="fa-brands fa-instagram-square"></i
+              ></a>
+            </div>
+            <span>Made By <i class="fa-solid fa-heart"></i></span>
+          </div>
+        </div>
+
+        <div class="right">
+          <img src="{{ url_for('static',filename='gif/bg-g.gif')}}" alt="" />
+        </div>
+      </div>
+    </div>
+
+    <a class="btn-home" href="{{ url_for('index') }}">Home</a>
+  </body>
+</html>

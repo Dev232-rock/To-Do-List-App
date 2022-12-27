@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&family=Roboto:ital,wght@1,900&family=Sora:wght@600&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img{
+    width: 100%;
+    height: 90%;
+    border-radius: 8px;
+}
+
+a{color: inherit;}
+
+.container{
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Sora', sans-serif;
+
+    border-radius: 10px;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    background-color: #FFA500;
+    border-radius: 15px;
+    border: 1 solid rgba(255, 255,255, 0.1);
+    padding: 5px; 
+    box-shadow: 0px 0px 5px 0px #000000;
+}
+
+.title{
+    margin-top: 10%;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.title-login{
+    margin-bottom: 10%;
+    
+}
+
+.title h2{font-size: 3rem;}
+.register{color: #472ec3;}
+
+
+.left{
+    width: 50%;
+    background-color: 
+    rgb(203, 87, 54);
+    margin-right: 5px;
+    border-radius: 10px;
+    padding: 10px;
+}
+.right{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    background-color: #472ec3;
+    border-radius: 10px;
+
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],input[type="password"],input[type="submit"]{
+    height: 50px;
+    border-radius: 20px;
+    border-color: none;
+    border-style: none;
+    margin: 20px 5px;
+    font-size: 1.2rem;
+    padding:15px;
+}
+
+input[type='checkbox']{
+    background-color: red;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+input[type="submit"]{
+    cursor: pointer;
+    background-color: white;
+    font-size: 1.5rem;
+    padding: 5px;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Sora', sans-serif;
+}
+
+input[type="submit"]:hover,input:hover{
+    background-color: #FFE5B4;
+
+}
+
+
+.options{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ME{
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+body,.btn-home{
+     background-color: #472ec3;
+}
+
+.footer{
+    margin-top: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.social{
+    display: flex;
+}
+
+.social a{
+    text-decoration: none;
+    background-color: purple;
+    font-size: 1.5rem;
+    border-radius: 1.1rem;
+    box-shadow: 0px 0px 5px 0px #000000;
+    margin: 1rem;
+    padding: 0 0.8rem;
+}
+
+.fa-heart{
+    color: red;
+}
+
+
+.btn-home{
+    padding: 10px;
+    border: 2px solid #FFA500;
+    border-radius: 10px;
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Sora', sans-serif;
+}
+
+
+.p-custom{
+    position: relative;
+}
+
+
+
+
+
+
+
+@media(max-width:1100px){
+    .container{
+        height: 100%;
+        
+    }
+    .main{
+        margin-top: 2%;
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+        height:100vh;
+    }
+    .right{
+        width: 100%;
+        height:70vh;
+        /* background-color: red; */
+    }
+    img{
+        width: 100%;
+        height: 80%;
+    }
+}
+@media(max-width:565px){
+    img{
+        width: 100%;
+        height: 70%;
+    }
+    .social a{
+        margin: 0.5rem;
+        padding: 0 0.8rem;
+    }
+    
+}

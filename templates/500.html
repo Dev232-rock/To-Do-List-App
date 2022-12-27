@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' ,filename='img/logo.png') }}" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css-main/500.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="img">
+            <img src="{{url_for('static',filename='img/500.jpg')}}" alt="">
+            <h1> Server Side <a class="found" href="#">Error</a> </h1>
+            <h2>Please Contact with Sysadmin@gmail.com</h2>
+            <a class="back-home" href="#">Back to Home</a>
+        </div>
+    </div>
+    
+</body>
+</html>

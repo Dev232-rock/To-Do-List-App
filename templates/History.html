@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}
+    History
+{% endblock%} 
+
+
+
+{% block style%}
+<link
+rel="stylesheet"
+href=" {{ url_for('static', filename='css-main/index/index-helper.css') }} "
+/>
+<link
+rel="stylesheet"
+href=" {{ url_for('static', filename='css-main/index/index.css') }} "
+/>
+<link
+rel="stylesheet"
+href=" {{ url_for('static', filename='css-main/index/index-Modal.css') }} "
+/>
+
+{% endblock%}
+
+
+{% block main %}
+
+<table class="table-content">
+<thead>
+        <tr class="header-col">
+            <th class="header-cell left-top">#</th>
+            <th class="header-cell">Task Name</th>
+            <th class="header-cell">Info</th>
+            <th class="header-cell right-top text-center">Status</th>
+        </tr>
+</thead>
+
+<tbody>
+<div class="body-table">
+{% if user_db %} 
+      {% for each in user_db %}
+            {% set line_counter = loop.index %}
+
+                <tr class="even">
+                    <td>
+                      <div class="text-success">
+                        <i class="fa-solid fa-circle-check"></i>
+                        {{line_counter}}
+                      </div>
+                    </td>
+                    
+                    <td class="mt-2 mb-2">
+                      {{each.task_title}}
+                    </td>
+                    
+                    <td class="mt-2 mb-2">
+                      {{each.task_info}}
+                    </td>
+                    
+                    <td class="last" class="mt-2 mb-2">
+                       <span>Done :)</span> 
+                    </td>
+                </tr>
+
+        {% endfor %}
+{% endif %}
+    </div>
+  </tbody>
+</table>
+
+{% endblock %}
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' ,filename='img/logo.png') }}" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css-main/404.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="img">
+            <img src="{{url_for('static',filename='img/404.jpg')}}" alt="">
+            <h1> Page Not <a class="found" href="#">Found</a> </h1>
+            <a class="back-home" href="/">Back to Home</a>
+        </div>
+    </div>
+    
+</body>
+</html>

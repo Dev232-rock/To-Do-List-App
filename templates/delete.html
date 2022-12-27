@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9acc533df2.js"crossorigin="anonymous"></script>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' ,filename='img/logo.png') }}" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WE-Team Edit</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css-main/edit/edit.css') }}">
+  </head>
+  <body>
+    
+    <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="/">
+                <img
+                  src="{{url_for('static', filename='img/logo.png')}}"
+                  alt=""
+                  width="40"
+                  height="40"
+                  class="d-inline-block align-text-top"
+                />
+                We Team
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Profile</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Support</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                  </li>
+                </ul>
+                <form class="d-flex">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Search in my Works"
+                    aria-label="Search"
+                  />
+                  <button class="btn btn-outline-success" type="submit">
+                    Search
+                  </button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+
+            {% with message = get_flashed_messages() %} 
+                {% if message %} 
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Welcome Dear
+                    {% for msg in message %}
+                     <strong>{{msg}}</strong>
+                    {% endfor %} 
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                  {% endif %}
+            {% endwith %}
+
+
+            <div class="container-fluid bg-costom p-5">
+                <div class="container-form mt-5">
+                    <form class="form_edit" action="/delete" method="post">
+                        <h2 class="mx-auto" >Are Sure wanna Delete This Task?</h2>
+                        <input type="hidden" name="post_id" value="{{post_id}}">
+                        <div class="d-flex justify-content-center align-items-center">
+
+                          <input class="p-0 p-5" type="submit" name="delete"  value="Yes" />
+                          <a href="/">
+                            <input class="w-100 p-5" type="submit" name="delete" value="No" />
+                          </a>
+                          
+                        </div>
+                      </form>
+                </div>
+            </div>
+
+
+
+
+
+
+    </div>
+<script src=" {{url_for('static', filename='JS/index-main.js')}} "></script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</body>
+</html>

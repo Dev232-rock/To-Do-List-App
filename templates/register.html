@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static' ,filename='img/logo.png') }}" />
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Team-Register</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='css-main/Forms.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css-main/MainForms.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css-main/MediaQueryForms.css') }}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css-main/alert.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="center">
+            <div class="left">
+                <div class="left-form">
+
+                 {% with message = get_flashed_messages() %} 
+                    {% if message %} 
+                            <div style="background-color: rgb(66, 198, 64)" class="alert">
+                                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                {% for msg in message %}
+                                {{msg}}
+                                {% endfor %} 
+                            </div>
+                    {% endif %}
+                {% endwith %}
+
+
+            {% if error %}
+                <div style="background-color: red" class="alert">
+                    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    {{error_message}}
+                </div>
+            {% endif %}
+
+
+                        <a class="header" href="">
+                            <img src=" {{ url_for('static' ,filename='img/logo.png') }} " alt="">
+                            <h1>We Team - Register</h1>
+                        </a>
+                    <form class="form-inside" action="/register" method="post">
+                        {{form.hidden_tag()}} 
+                        {{form.username(placeholder="    Username",class="input-origin")}} 
+                        {{form.password(placeholder="    Password",class="input-origin")}}
+                        {{form.password_re(placeholder="    Password confirmation",class="input-origin")}}
+                        
+
+                        {{form.submit()}}
+                    </form>
+                    <footer>
+                        <div>
+                            <h4>Have An account? <a href=" {{url_for('login')}} ">login</a></h4>
+                        </div>
+                        <div class="footer-end" >
+                            <h5>Created by : <a href="#"> ALisharify</a></h5>
+                            <h5>Made by <span class="love" >&#10084;</span></h5>
+                        </div>                        
+                    </footer>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+    </div>
+</body>
+</html>
