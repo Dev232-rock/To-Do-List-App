@@ -2,7 +2,7 @@
 
 > First
 
-      git clone https://github.com/alisharifyy/Todo-Web-app
+      git clone https://github.com/Dev232-rock/To-Do-List-App
 
 > Then Type This For Install all Packages
 
@@ -17,21 +17,21 @@
 ### For Style Page Using Bootstrap For Menu But Other Style Cooded manually 
       
 # 1.Login And Register Index Page
-<img src="https://github.com/alisharifyy/Todo-Web-app/blob/main/static/img/register.png" width="100%">   
-<img src="https://github.com/alisharifyy/Todo-Web-app/blob/main/static/img/login.png" width="100%"> 
+<img src="https://github.com/Dev232-rock/To-Do-List-App/blob/main/static/img/register.png" width="100%">   
+<img src="https://github.com/Dev232-rock/To-Do-List-App/blob/main/static/img/login.png" width="100%"> 
 
 ---
 
 # 2.Index Page 
-<img src="https://github.com/alisharifyy/Todo-Web-app/blob/main/static/img/first_home.png" width="100%"> 
+<img src="https://github.com/Dev232-rock/To-Do-List-App/blob/main/static/img/first_home.png" width="100%"> 
 
 
 ---
 
 # 3. Add Task 
-<img src="https://github.com/alisharifyy/Todo-Web-app/blob/main/static/img/add_task.png" width="100%">
-<img src="https://github.com/alisharifyy/Todo-Web-app/blob/main/static/img/task_added.png" width="100%"> 
+<img src="https://github.com/Dev232-rock/To-Do-List-App/blob/main/static/img/add_task.png" width="100%">
+<img src="https://github.com/Dev232-rock/To-Do-List-App/blob/main/static/img/task_added.png" width="100%"> 
 
 
 # 4. History Page 
-<img src="https://github.com/alisharifyy/Todo-Web-app/blob/main/static/img/history.png" width="100%"> 
+<img src="https://github.com/Dev232-rock/To-Do-List-App/blob/main/static/img/history.png" width="100%"> 
